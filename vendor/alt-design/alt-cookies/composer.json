@@ -1,0 +1,21 @@
+{
+    "name": "alt-design/alt-cookies",
+    "description": "Helps handle scripts and cookies on your Statamic site",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AltDesign\\AltCookiesAddon\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Alt Cookies",
+            "description": "Alt Cookies"
+        },
+        "laravel": {
+            "providers": [
+                "AltDesign\\AltCookiesAddon\\ServiceProvider"
+            ]
+        }
+    }
+}

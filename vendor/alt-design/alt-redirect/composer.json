@@ -1,0 +1,30 @@
+{
+    "name": "alt-design/alt-redirect",
+    "description": "Alt Redirect addon, add Redirects to your site",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AltDesign\\AltRedirect\\": "src"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "statamic/cms": "^4.0|^5.17.0"
+    },
+    "extra": {
+        "statamic": {
+            "name": "Alt Redirect",
+            "description": "Alt Redirect addon"
+        },
+        "laravel": {
+            "providers": [
+                "AltDesign\\AltRedirect\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": false
+        }
+    }
+}
