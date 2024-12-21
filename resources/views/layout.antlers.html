@@ -1,16 +1,123 @@
-<!doctype html>
-<html lang="{{ site:short_locale }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {{ alt_seo:meta }}
-        {{ vite src="resources/js/site.js|resources/css/site.css" }}
-    </head>
-    <body class="alt_starter_kit page-{{ slug }} relative" x-data="{navOpen: false, modalOpen: false}">
-        {{ partial src="parts/header"}}
-        {{ template_content }}
-        {{ partial src="parts/footer"}}
-        {{ AltCookies:Toast }}
-    </body>
+<!DOCTYPE html>
+<html lang="en-Us">
+<head>
+    {{ alt_seo:meta }}
+    <!-- meta tag -->
+    <meta charset="utf-8">
+    <!-- responsive tag -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" href="{{ brand:favicon }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ brand:favicon }}">
+    <!-- Bootstrap v5.0.2 css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/font/font-awesome.min.css">
+    <!-- Uicons Regular Rounded css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/uicons-regular-rounded.css">
+    <!-- flaticon css -->
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/flaticon.css">
+    <!-- animate css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/owl.carousel.css">
+    <!-- slick slider css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
+    <!-- odometer css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/odometer.min.css">
+    <!-- off canvas css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/off-canvas.css">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/magnific-popup.css">
+    <!-- Main Menu css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/rsmenu-main.css">
+    <!-- spacing css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/rs-spacing.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css"> <!-- This stylesheet dynamically changed from style.less -->
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="defult-home">
+
+<div class="offwrap"></div>
+
+<!-- Main content Start -->
+<div class="main-content">
+    {{ partial src="parts/header"}}
+    {{ template_content }}
+</div>
+<!-- Main content End -->
+{{ partial src="parts/footer"}}
+<!-- start scrollUp  -->
+<div id="scrollUp">
+    <i class="fa fa-angle-up"></i>
+</div>
+<!-- End scrollUp  -->
+
+
+<!-- Search Modal Start -->
+<div class="modal fade search-modal" id="searchModal" tabindex="-1">
+    <button type="button" class="close" data-bs-dismiss="modal">
+        <i class="fi fi-rr-cross-small"></i>
+    </button>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="search-block clearfix">
+                <form>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Searching..." type="text">
+                        <button type="submit" value="Search"><i class="fi fi-rr-search"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search Modal End -->
+
+<!-- modernizr js -->
+<script src="/assets/js/modernizr-2.8.3.min.js"></script>
+<!-- jquery latest version -->
+<script src="/assets/js/jquery.min.js"></script>
+<!-- Bootstrap v5.0.2 js -->
+<script src="/assets/js/bootstrap.min.js"></script>
+<!-- op nav js -->
+<script src="/assets/js/jquery.nav.js"></script>
+<!-- PageScroll2id onepage js -->
+<script src="/assets/js/jquery.malihu.PageScroll2id.min.js"></script>
+<!-- owl.carousel js -->
+<script src="/assets/js/owl.carousel.min.js"></script>
+<!-- Slick js -->
+<script src="/assets/js/slick.min.js"></script>
+<!-- wow js -->
+<script src="/assets/js/wow.min.js"></script>
+<!-- Skill bar js -->
+<script src="/assets/js/skill.bars.jquery.js"></script>
+<!-- imagesloaded js -->
+<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+<!-- odometer & appear js -->
+<script src="/assets/js/jquery.appear.min.js"></script>
+<script src="/assets/js/odometer.min.js"></script>
+<!-- magnific popup js -->
+<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+<!-- contact form js -->
+<script src="/assets/js/contact.form.js"></script>
+<!-- main js -->
+<script src="/assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/SVG-Morpheus/0.3.2/svg-morpheus.js"></script>
+<script src="/assets/js/custom-gasp-animations/homepage.js"></script>
+</body>
+
 </html>

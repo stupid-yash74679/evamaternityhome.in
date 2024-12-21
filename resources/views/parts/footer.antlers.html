@@ -1,58 +1,98 @@
-<footer class="alt_footer bg-black text-white py-12">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-wrap">
-            <div class="w-full lg:w-1/4 mb-5 lg:mb-0">
-                <a href="/" aria-label="Back to Homepage" >
-                    <img src="/images/alt_logo.svg" alt="{{ config:app:name }}" class="w-[100px]">
-<!--                    <img src="{{ glide src='/images/logo.png' format='webp' width='100'}}" alt="{{ config:app:name }}" class="w-[100px]">-->
-                </a>
-            </div>
-
-            <div class="w-full lg:w-1/4">
-                {{ if contact_details:address }}
-                <div class="leading-6 text-base mb-4">{{ contact_details:address }}</div>
-                {{ /if }}
-            </div>
-
-            <div class="w-full lg:w-1/4 flex flex-col">
-                {{ if contact_details:telephone }}
-                <div class="inline-flex font-semibold">
-                    T: <a href="tel:{{ contact_details:telephone }}" class="ml-2 mb-1 font-normal">{{ contact_details:telephone }}</a>
-                </div>
-                {{ /if }}
-
-                {{ if contact_details:email }}
-                <div class="inline-flex font-semibold">
-                    E: <a href="tel:{{ contact_details:email }}" class="ml-2 mb-6 font-normal">{{ contact_details:email }}</a>
-                </div>
-                {{ /if }}
-                {{ partial src="parts/social-links" }}
-            </div>
-
-            <div class="w-full lg:w-1/4 order-first lg:order-last mb-5 lg:mb-0">
-                <div class="footer-links flex flex-col lg:flex-row space-y-4 lg:space-y-0 justify-between ">
-                    {{ nav:footer_nav }}
-                    <div class="">
-                        <a href="{{ url }}">{{ title }}</a>
+<!-- Footer Start -->
+<footer id="rs-footer" class="rs-footer footer-main-home">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 md-mb-20">
+                    <h3 class="footer-title">About<br/>{{ brand:brand_name }}</h3>
+                    <div class="textwidget mb-33">
+                        Lorem ipsum dolor sit amet, conse turini adipiscing elit, sed do eius mod tempor in cididunt ut
+                        labore lorem ipsum
                     </div>
-                    {{ /nav:footer_nav }}
+                    <ul class="footer-social md-mb-30">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 pl-76 md-pl-15 md-mb-10">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="address-widget">
+                        <li>
+                            <i class="fi fi-rr-map-marker-home"></i>
+                            <div class="desc">
+                                503 Ocala Street,<br>
+                                Florida, USA
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fi fi-rr-phone-call"></i>
+                            <div class="desc">
+                                <a href="tel:(+1)123-4567890">(+1) 123-456-7890</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fi fi-rr-envelope-plus"></i>
+                            <div class="desc">
+                                <a href="mailto:info@renovix.biz">info@renovix.biz</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 pl-75 md-pl-15 md-mb-10">
+                    <h3 class="footer-title">Featured Services</h3>
+                    <ul class="site-map">
+                        <li><a href="fintech-analysis.html">Fintech Analysis</a></li>
+                        <li><a href="project-reporting.html">Project Reporting</a></li>
+                        <li><a href="reports-analysis.html">Reports Analysis</a></li>
+                        <li><a href="business-analysis.html">Business Analysis</a></li>
+                        <li><a href="business-planning.html">Business Planning</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="footer-title">Recent Articles</h3>
+                    <ul class="post-widget">
+                        <li class="post-item mb-30">
+                            <div class="desc"><h3 class="title"><a href="#">How investing in dependend your business
+                                growth.</a></h3></div>
+                            <div class="post-date">
+                                <i class="fi-rr-calendar"></i>
+                                March 23, 2022
+                            </div>
+                        </li>
+                        <li class="post-item">
+                            <div class="desc"><h3 class="title"><a href="#">How to maintain customers relations
+                                disaster.</a></h3></div>
+                            <div class="post-date">
+                                <i class="fi-rr-calendar"></i>
+                                March 23, 2022
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <div class="bottom border-t border-white pt-6 mt-6 text-white flex flex-wrap justify-between items-center">
-            <div class="footer-small-links flex space-x-5">
-            {{ nav:footer_small_links }}
-            <div class="text-xs">
-                <a href="{{ url }}">{{ title }}</a>
-            </div>
-            {{ /nav:footer_small_links }}
-            </div>
-            <div class="flex items-center text-xs leading-5">
-                Site by <a href="https://www.alt-design.net/" target="_blank" class="pl-1 hover:underline">Alt</a>
-                <div class="ml-4">
-                    &copy; {{ now|format:Y }} {{ config:app:name }}</div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row y-middle">
+                <div class="col-lg-6 md-mb-10 text-lg-end text-center order-last">
+                    <ul class="copy-right-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services1.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact1.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="copyright text-lg-start text-center">
+                        <p>© 2024 Renovix. Designed By <a href="https://rstheme.com/" target="blank">RSTheme</a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </footer>
+<!-- Footer End -->

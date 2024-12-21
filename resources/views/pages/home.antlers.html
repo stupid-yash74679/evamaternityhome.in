@@ -1,0 +1,941 @@
+<!-- Banner Start -->
+<style>
+    .rs-banner {
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh; /* Ensure the banner takes at least the full viewport height */
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .banner-background-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .banner-background-images {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .background-layered-image {
+        position: absolute;
+        left: 0;
+    }
+
+    .background-layered-image.image1 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .background-layered-image.image2 {
+        width: 20vw;
+        z-index: 2;
+    }
+
+
+    .background-layered-image.image4 {
+        width: 100%;
+        height: auto;
+        bottom: 0; /* Align the rocks at the bottom */
+        position: absolute; /* Ensure it's positioned correctly */
+        z-index: 4; /* Ensure it is in front */
+    }
+    .content-wrap {
+        position: relative;
+        z-index: 10;
+        padding-top: 50px; /* Adjust as needed for spacing */
+    }
+</style>
+<div class="rs-banner banner-style1">
+    <div class="container">
+        <!-- Background Wrapper -->
+        <div class="row banner-background-wrapper">
+            <div class="col-lg-12" style="padding: 0">
+                <div class="banner-background-images">
+                    <img src="/assets/images/hero/bg.jpg" alt="Layer Image 1" class="background-layered-image image1">
+                    <img src="/assets/images/hero/sun.svg" alt="Layer Image 1" class="background-layered-image image2">
+                    <img id="hero-women" src="/assets/images/hero/women.png" alt="Layer Image 3"
+                         style="width: 420px; position: absolute; right: 0; bottom: 0; z-index: 3 !important; margin-right: 10%; margin-bottom: 100px;"> <!-- Inline Styles for Debugging -->
+                    <img src="/assets/images/hero/rocks.png" alt="Layer Image 1" class="background-layered-image image4">
+                </div>
+            </div>
+        </div>
+        <!-- Content Wrapper -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="content-wrap">
+                    <span class="sub-text">Welcome To Eva Maternity Home</span>
+                    <h1 class="title">We Care For<br> Your<span> Journey</span></h1>
+                    <p class="description">
+                        Compassionate and expert maternity care in Bharuch. Over 10 years of dedicated service to mothers and newborns, ensuring every moment is safe and memorable.
+                    </p>
+                    <div class="banner-btn mt-40 md-mt-25">
+                        <a class="readon slide-started" href="contact1.html"><span>Get Started</span></a>
+                    </div>
+                    <div id="homepage-hero-banner-box" class="banner-box banner-boxs"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner End -->
+<!-- About Start -->
+<div id="rs-about" class="rs-about about-style2 pt-120 pb-120 md-pt-80 md-pb-70" style="position: relative">
+    <style>
+        #motionPathSVG {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Ensure it stays in the background */
+        }
+        #circle {
+            position: absolute;
+            fill: red; /* Color of the circle */
+        }
+        #baby-element{
+            transform: translateX(-100vw);
+        }
+    </style>
+    <svg id="motionPathSVG" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path id="motionPath" d="M-10,90 C40,10 60,150 90,50 S150,90 190,10" fill="none" stroke="black" stroke-width="0"/>
+    </svg>
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/aeroplane.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/dog.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/car.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/gun.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/alphabet.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/toy-car.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/kite.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/rocking-horse.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/crib-toy (1).svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/beach-ball.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/windmill.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/crib-toy.svg" >
+    <img id="baby-element" width="64" height="64" src="/assets/images/about/toy-train.svg" >
+    <div class="container">
+        <div class="row y-middle">
+            <div class="col-lg-6 pr-42 md-pr-15 md-mb-50 anm-scroll-from-left">
+                <div class="about-img wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0s">
+                    <img src="/assets/images/pragnent-women.svg" alt="Images">
+                </div>
+            </div>
+            <div class="col-lg-6 pr-38 md-pr-15 pl-30 md-pl-15 anm-scroll-from-right">
+                <div class="sec-title mb-45 md-mb-25">
+                    <span class="sub-text big-text">About <strong>Eva Maternity Home</strong></span>
+                    <h2 class="title title2 title-color pb-20">
+                        Over 12 Years of Expertise in <span>Maternity Care</span>
+                    </h2>
+                    <p class="desc small2">For over two decades, Eva Maternity Home has been dedicated to providing compassionate and comprehensive care for mothers and their newborns. Our experienced team is here to support you through every step of your pregnancy journey.</p>
+                </div>
+                <!-- Counter Section Start -->
+                <div id="rs-counter" class="rs-counter counter-style2 pb-45">
+                    <div class="row">
+                        <div class="col-lg-5 md-mb-30 col-md-5">
+                            <div class="rs-counter-list">
+                                <div class="counter-right-border"></div>
+                                <div class="count-text">
+                                    <div class="count-number">
+                                        <span class="rs-count odometer" data-count="552">00</span>
+                                        <span class="prefix">+</span>
+                                    </div>
+                                    <span class="title">Healthy Deliveries</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7">
+                            <div class="rs-counter-list widget-padding">
+                                <div class="count-text">
+                                    <div class="count-number">
+                                        <span class="rs-count odometer" data-count="652">00</span>
+                                        <span class="prefix">+</span>
+                                    </div>
+                                    <span class="title">Happy Families</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Counter Section End -->
+                <div class="btn-part">
+                    <a class="readon slide-started more" href="contact1.html"><span>Read More</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Services Section Start -->
+<div class="rs-services services-style2 pt-120 pb-120 md-pt-80 md-pb-80">
+    <div class="container">
+        <div class="row mb-40 align-items-end">
+            <div class="col-lg-6">
+                <div class="sec-title md-mb-25">
+                    <span class="sub-text big-text">Our Services</span>
+                    <h2 class="title title2 title-color">
+                        Most Trusted <span> Maternity Care</span> <br/>in Bharuch
+                    </h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="sec-title pb-10">
+                    <p class="desc small">Eva Maternity Home offers specialized care for high-risk pregnancies, advanced prenatal services, and postnatal support. Trust us to guide your journey with expertise and compassion.</p>
+                </div>
+            </div>
+        </div>
+        <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true"
+             data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false"
+             data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1"
+             data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="2"
+             data-ipad-device-nav="true" data-ipad-device-dots="false" data-ipad-device2="2"
+             data-ipad-device-nav2="true" data-ipad-device-dots2="false" data-md-device="3"
+             data-md-device-nav="true" data-md-device-dots="false">
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="prenatal-care.html">Prenatal<br/> Care</a></h3>
+                    <p class="description">We’re here to ensure every step of your pregnancy is smooth and healthy. Let us take care of you & your baby right from the start.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="high-risk-pregnancy.html">High-Risk <br/>Pregnancy Care</a></h3>
+                    <p class="description">If your pregnancy requires special attention, you can trust us to keep you and your baby safe every step of the way.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="postnatal-care.html">Postnatal <br/>Care</a></h3>
+                    <p class="description">Your journey doesn't end at delivery. We're here to support you and your baby as you begin this new chapter together.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="fertility-treatments.html">Fertility <br/> Treatments</a></h3>
+                    <p class="description">Struggling to conceive? We offer a range of fertility treatments to help you on your journey to parenthood.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="neonatal-care.html">Neonatal<br/> Care</a></h3>
+                    <p class="description">Our neonatal experts are here to provide the best care for your newborn, especially if they need a little extra attention.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="pediatric-care.html">Pediatric <br/> Care</a></h3>
+                    <p class="description">Your child’s health is our priority. We offer comprehensive care to keep your little ones healthy and happy.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="gynecological-services.html">Gynecological <br/> Services</a></h3>
+                    <p class="description">From routine exams to complex procedures, our gynecological services are designed with your health in mind.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="nutrition-and-wellness.html">Nutrition <br/>& Wellness</a></h3>
+                    <p class="description">Good nutrition is key to a healthy pregnancy. Let us guide you with personalized nutrition plans and wellness tips.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="ultrasound-imaging.html">Ultrasound <br/>Imaging</a></h3>
+                    <p class="description">See your baby’s progress with our state-of-the-art ultrasound imaging services, providing clear and accurate results.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+
+            <div class="rs-services-slider mt-45">
+                <div class="content-part">
+                    <h3 class="title"><a href="breastfeeding-support.html">Breastfeeding<br/> Support</a></h3>
+                    <p class="description">Breastfeeding can be challenging. Our lactation consultants are here to offer guidance and support every step of the way.</p>
+                    <a class="readon slide-started more" href="services1.html"><span>View More</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="services-item pt-20">
+            <div class="row">
+                <div class="col-lg-5 md-mb-30">
+                    <div class="services-btn-box">
+                        <div class="sec-title">
+                            <p class="desc small2">At Eva, we offer all the support and services you need throughout your pregnancy journey.</p>
+                            <div class="btn-part mt-28">
+                                <a class="readon slide-started more" href="services1.html"><span>See All Services</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="services-img">
+                        <img src="/assets/images/services/style2/medium-shot.jpg" alt="Eva Maternity Home Services">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services Section End -->
+
+<!-- About Section Start -->
+<style>
+    @media (max-width: 768px) {
+        .rs-about .row {
+            display: flex;
+            flex-direction: column-reverse; /* Reverses the order of the columns */
+        }
+        .appoach-img {
+            width: 100%;
+            min-height: 100vh; /* Ensure full viewport height to avoid overlapping */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Keep it relative to manage absolute positioning of images */
+        }
+
+        .appoach-img img {
+            width: 70vh; /* Adjust the size based on the viewport height */
+            max-width: 70%; /* Ensure images do not exceed container width */
+            position: absolute; /* Allow images to overlap each other without affecting other content */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the images */
+        }
+    }
+</style>
+<div id="infent-animation-section" class="rs-about about-style2 pt-120 pb-120 md-pt-80 md-pb-80">
+    <div class="container">
+        <div class="row y-middle">
+            <div class="col-lg-6 pr-65 md-pr-15 md-mb-50">
+                <div class="sec-title mb-30">
+                    <span class="sub-text big-text">Why Choose Eva?</span>
+                    <h2 class="title title2 title-color pb-20">
+                        Expert Care for You and Your<span> Baby</span> till the end.
+                    </h2>
+                    <p class="desc small2">Eva Maternity Home offers compassionate, personalized care with state-of-the-art facilities. From prenatal to postnatal services, our experienced team is dedicated to ensuring the health and well-being of both mother and baby.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="check-lists">
+                            <li>Advanced Technology</li>
+                            <li>Dedicated Support Team</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="check-lists">
+                            <li>Comprehensive Services</li>
+                            <li>Personalized Care Plans</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="rs-addon-services">
+                    <div class="services-wrap">
+                        <div class="services-icon">
+                            <img src="/assets/images/approach/icon-bg.png" alt="Images">
+                        </div>
+                        <div class="services-content">
+                            <h5 class="title">Have a Question? Call Us Anytime</h5>
+                            <p class="services-txt"><a href="tel:+0885898745">(+088) 589-8745</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-part mt-40">
+                    <a class="readon slide-started more" href="about.html"><span>Get Started</span></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="appoach-img" style="position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+                    <img src="/assets/images/infent/1.svg" alt="Image 1" style="position: absolute;">
+                    <img src="/assets/images/infent/2.svg" alt="Image 2" style="position: absolute;">
+                    <img src="/assets/images/infent/3.svg" alt="Image 3" style="position: absolute;">
+                    <img src="/assets/images/infent/4.svg" alt="Image 4" style="position: absolute;">
+                    <img src="/assets/images/infent/5.svg" alt="Image 5" style="position: absolute;">
+                    <img src="/assets/images/infent/6.svg" alt="Image 6" style="position: absolute;">
+                    <img src="/assets/images/infent/7.svg" alt="Image 7" style="position: absolute;">
+                    <img src="/assets/images/infent/8.svg" alt="Image 8" style="position: absolute;">
+                    <img src="/assets/images/infent/9.svg" alt="Image 9" style="position: absolute;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- About Section End -->
+
+<!-- Project Start -->
+<div class="rs-project case-studies-style">
+    <div class="container">
+        <div class="sec-title text-center mb-45 md-mb-25">
+            <span class="sub-text big-text">Our Facilities</span>
+            <h2 class="title title2 title-color">
+                Discover Our<br>
+                State-of-the-Art<span> Facilities</span>
+            </h2>
+        </div>
+    </div>
+</div>
+
+
+<!-- Project Start -->
+<div class="rs-project project-style2 pt-120 pb-120">
+    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true"
+         data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false"
+         data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1"
+         data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="2"
+         data-ipad-device-nav="false" data-ipad-device-dots="true" data-ipad-device2="2"
+         data-ipad-device-nav2="false" data-ipad-device-dots2="true" data-md-device="3" data-md-device-nav="false"
+         data-md-device-dots="true">
+        <div class="project-item">
+            <div class="project-img">
+                <a href="portfolios-single.html"><img src="/assets/images/project/style2/1.jpg" alt="images"></a>
+            </div>
+            <div class="project-inner">
+                <span class="category"><a href="portfolios-single.html">Maternity Ward</a></span>
+                <h3 class="title"><a href="portfolios-single.html">Comfortable and Modern Maternity Ward</a></h3>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="project-img">
+                <a href="portfolios-single.html"><img src="/assets/images/project/style2/2.jpg" alt="images"></a>
+            </div>
+            <div class="project-inner">
+                <span class="category"><a href="portfolios-single.html">Neonatal Care</a></span>
+                <h3 class="title"><a href="portfolios-single.html">Advanced Neonatal Intensive Care Unit</a></h3>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="project-img">
+                <a href="portfolios-single.html"><img src="/assets/images/project/style2/6.jpg" alt="images"></a>
+            </div>
+            <div class="project-inner">
+                <span class="category"><a href="portfolios-single.html">Labor & Delivery</a></span>
+                <h3 class="title"><a href="portfolios-single.html">Safe and Private Labor & Delivery Rooms</a></h3>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="project-img">
+                <a href="portfolios-single.html"><img src="/assets/images/project/style2/4.jpg" alt="images"></a>
+            </div>
+            <div class="project-inner">
+                <span class="category"><a href="portfolios-single.html">Consultation</a></span>
+                <h3 class="title"><a href="portfolios-single.html">Personalized Consultation Rooms</a></h3>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="project-img">
+                <a href="portfolios-single.html"><img src="/assets/images/project/style2/5.jpg" alt="images"></a>
+            </div>
+            <div class="project-inner">
+                <span class="category"><a href="portfolios-single.html">Postnatal Care</a></span>
+                <h3 class="title"><a href="portfolios-single.html">Comprehensive Postnatal Care Services</a></h3>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="project-img">
+                <a href="portfolios-single.html"><img src="/assets/images/project/style2/6.jpg" alt="images"></a>
+            </div>
+            <div class="project-inner">
+                <span class="category"><a href="portfolios-single.html">Nutrition & Wellness</a></span>
+                <h3 class="title"><a href="portfolios-single.html">Dedicated Nutrition & Wellness Support</a></h3>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="project-img">
+                <a href="portfolios-single.html"><img src="/assets/images/project/style2/3.jpg" alt="images"></a>
+            </div>
+            <div class="project-inner">
+                <span class="category"><a href="portfolios-single.html">Ultrasound</a></span>
+                <h3 class="title"><a href="portfolios-single.html">Cutting-Edge Ultrasound Imaging</a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Project End -->
+
+<!-- Team Section Start -->
+<div class="rs-team team-style1 pt-120 pb-120 md-pt-80 md-pb-80">
+    <div class="container">
+        <div class="sec-title text-center mb-52">
+            <span class="sub-text big-text">Our Team</span>
+            <h2 class="title title3">
+                Meet our Expert Doctors
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-25">
+                <div class="team-item">
+                    <div class="team-inner-wrap">
+                        <div class="image-wrap">
+                            <a href="team-single.html"><img src="assets/images/team/1.jpg" alt="Images"></a>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-name"><a href="team-single.html">Tasnia Tasnim</a></h3>
+                            <span class="team-title">Senior Consultant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-25">
+                <div class="team-item">
+                    <div class="team-inner-wrap">
+                        <div class="image-wrap">
+                            <a href="team-single.html"><img src="assets/images/team/2.jpg" alt="Images"></a>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-name"><a href="team-single.html">Babar Azam</a></h3>
+                            <span class="team-title">Business Advisor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-25">
+                <div class="team-item">
+                    <div class="team-inner-wrap">
+                        <div class="image-wrap">
+                            <a href="team-single.html"><img src="assets/images/team/3.jpg" alt="Images"></a>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-name"><a href="team-single.html">Anushka Sharma</a></h3>
+                            <span class="team-title">Digital Marketer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-25">
+                <div class="team-item">
+                    <div class="team-inner-wrap">
+                        <div class="image-wrap">
+                            <a href="team-single.html"><img src="assets/images/team/4.jpg" alt="Images"></a>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-name"><a href="team-single.html">Shaheen Afridi</a></h3>
+                            <span class="team-title">Web Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team Section End -->
+
+
+<!-- Call To Action Choose Start -->
+<div class="rs-cta">
+    <div class="container">
+        <div class="call-action bg1 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s">
+            <div class="sec-title">
+                <h2 class="title title2 pb-28">
+                    Hear the First Cry?<br>
+                    That's the Sound <br>   of Eva's Newest Arrival
+                </h2>
+                <div class="btn-part">
+                    <button id="playPauseBtn" onclick="togglePlayPause()"  class="readon slide-started join">
+                        <span><i id="playPauseIcon" class="fas fa-play"></i></span>
+                    </button>
+                    <audio id="audio" src="/assets/audio/newborncrying.wav"></audio>
+
+                    <script>
+                        function togglePlayPause() {
+                            var audio = document.getElementById("audio");
+                            var icon = document.getElementById("playPauseIcon");
+
+                            if (audio.paused) {
+                                audio.play();
+                                icon.classList.remove("fa-play");
+                                icon.classList.add("fa-pause");
+                            } else {
+                                audio.pause();
+                                icon.classList.remove("fa-pause");
+                                icon.classList.add("fa-play");
+                            }
+                        }
+
+                        // Optional: Update the button icon when the audio ends
+                        var audioElement = document.getElementById("audio");
+                        audioElement.addEventListener('ended', function() {
+                            var icon = document.getElementById("playPauseIcon");
+                            icon.classList.remove("fa-pause");
+                            icon.classList.add("fa-play");
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Call To Action Choose End -->
+
+<div id="rs-testimonial" class="rs-testimonial testimonial-style3 pt-120 md-pt-80">
+    <div class="row no-gutters">
+        <div class="col-lg-6 testi-image"></div>
+        <div class="col-lg-6">
+            <div class="widget-content">
+                <div class="sec-title mb-40 md-mb-20">
+                    <span class="sub-text big-text">Testimonials</span>
+                    <h2 class="title title2">
+                        What Our Patients <span>Says</span>
+                    </h2>
+                </div>
+                <div class="rs-carousel owl-carousel" data-loop="true" data-items="1" data-margin="30"
+                     data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800"
+                     data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false"
+                     data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false"
+                     data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="true"
+                     data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="true"
+                     data-md-device="1" data-md-device-nav="false" data-md-device-dots="true">
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>Eva Maternity Home helped us bring our little girl into the world with such care and kindness. The doctors and staff made us feel like family. Thank you for everything! </p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Parul Patel</div>
+                                <span class="designation">Homemaker</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>From the moment we stepped in, we knew we were in safe hands. Eva's team is incredible, and they supported us through every challenge with my high-risk pregnancy.</p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Shabnam Khan</div>
+                                <span class="designation">Teacher</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>Being first-time parents, we were anxious, but the staff at Eva Maternity Home put all our fears to rest. Their care was exceptional, and we couldn’t have asked for more.</p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Harpreet Singh</div>
+                                <span class="designation">Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>The personalized care we received at Eva was beyond our expectations. The doctors and nurses were always available to answer our questions and provide reassurance.</p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Suman Joshi</div>
+                                <span class="designation">Accountant</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>I was worried about my delivery due to previous complications, but the team at Eva Maternity Home made sure everything went smoothly. I am forever grateful.</p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Ayesha Sheikh</div>
+                                <span class="designation">Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>Eva Maternity Home provided us with a safe and supportive environment for our baby’s birth. We highly recommend their services to all expecting parents.</p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Ravi Desai</div>
+                                <span class="designation">IT Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>Having a premature baby was terrifying, but the neonatal care at Eva was exceptional. Our baby is now thriving, thanks to their expert care.</p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Kiran Kaur</div>
+                                <span class="designation">Bank Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>The team at Eva Maternity Home took care of us like family. We were always kept informed, and the staff was incredibly caring and professional.</p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Manisha Shah</div>
+                                <span class="designation">Lawyer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>I was so nervous about my C-section, but the doctors at Eva Maternity Home were amazing. They made the whole experience much easier for me.</p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Nazia Memon</div>
+                                <span class="designation">Entrepreneur</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="item-content-basic">
+                            <div class="quote">
+                                <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                            </div>
+                            <p>The level of care and attention we received at Eva was outstanding. We felt supported every step of the way, and our healthy baby boy is proof of that.</p>
+                        </div>
+                        <div class="testi-content">
+                            <div class="testi-information">
+                                <div class="testi-name">Amrit Singh</div>
+                                <span class="designation">Teacher</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Section Start -->
+<div id="rs-blog" class="rs-blog blog-style1 pt-120 pb-120 md-pt-80 md-pb-80">
+    <div class="container">
+        <div class="sec-title text-center mb-50">
+            <span class="sub-text big-text">News & Blog</span>
+            <h2 class="title title2 title-color">
+                Latest Updates<br>
+                & Expert <span>Insights</span>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 md-mb-50">
+                <div class="blog-item">
+                    <div class="image-wrap">
+                        <a href="blog-single.html"><img src="/assets/images/blog/style2/4.jpg" alt="Pregnancy Care Tips"></a>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="blog-meta">
+                            <li class="admin"><i class="fi fi-rr-user"></i>Eva Maternity Home</li>
+                            <li class="date"><i class="fi fi-rr-calendar"></i>23 March 2024</li>
+                        </ul>
+                        <h3 class="blog-title"><a href="blog-single.html">Essential Tips for a Healthy Pregnancy</a></h3>
+                        <div class="desc">Discover the most important practices for a healthy pregnancy and how to make the most of this special time...</div>
+                        <div class="blog-button"><a href="blog-single.html">Read More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="blog-horizontal">
+                    <div class="blog-meta mb-30">
+                        <div class="blog-item-wrap">
+                            <div class="image-wrap">
+                                <a href="blog-single.html"><img src="/assets/images/blog/style2/1.jpg" alt="Nutrition Advice"></a>
+                            </div>
+                            <div class="blog-content">
+                                <ul class="blog-meta">
+                                    <li class="admin"><i class="fi fi-rr-user"></i>Eva Maternity Home</li>
+                                    <li class="date"><i class="fi fi-rr-calendar"></i>25 March 2024</li>
+                                </ul>
+                                <h3 class="blog-title"><a href="blog-single.html">Nutrition Advice for Expectant Mothers</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-meta mb-30">
+                        <div class="blog-item-wrap">
+                            <div class="image-wrap">
+                                <a href="blog-single.html"><img src="/assets/images/blog/style2/2.jpg" alt="Postnatal Care Tips"></a>
+                            </div>
+                            <div class="blog-content">
+                                <ul class="blog-meta">
+                                    <li class="admin"><i class="fi fi-rr-user"></i>Eva Maternity Home</li>
+                                    <li class="date"><i class="fi fi-rr-calendar"></i>25 March 2024</li>
+                                </ul>
+                                <h3 class="blog-title"><a href="blog-single.html">How to Care for Yourself Post-Delivery</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-meta">
+                        <div class="blog-item-wrap">
+                            <div class="image-wrap">
+                                <a href="blog-single.html"><img src="/assets/images/blog/style2/3.jpg" alt="Infant Health"></a>
+                            </div>
+                            <div class="blog-content">
+                                <ul class="blog-meta">
+                                    <li class="admin"><i class="fi fi-rr-user"></i>Eva Maternity Home</li>
+                                    <li class="date"><i class="fi fi-rr-calendar"></i>25 March 2024</li>
+                                </ul>
+                                <h3 class="blog-title"><a href="blog-single.html">Best Practices for Infant Health</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog Section End -->
+
+<!-- Contact Start -->
+<div class="rs-contact contact-style1 home4 bg2 pt-120 pb-120 md-pt-80 md-pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 pt-60 pr-50 md-pr-15 md-pt-0 md-mb-50">
+                <div class="sec-title2 mb-60">
+                    <h2 class="title pb-20">Let’s talk about how we can <span>support</span> your journey.</h2>
+                    <p class="description">At Eva, we’re here to guide you through every step of your pregnancy with care, expertise, and compassion.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 mb-65 md-mb-40">
+                        <div class="address-item">
+                            <div class="address-icon">
+                                <img src="assets/images/contact/icons/1.png" alt="Images">
+                            </div>
+                            <div class="address-text">
+                                <h4 class="title"> Eva Maternity Home</h4>
+                                <p class="address-txt">{{ brand:long_address }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 mb-65 md-mb-40">
+                        <div class="address-item">
+                            <div class="address-icon">
+                                <img src="assets/images/contact/icons/3.png" alt="Images">
+                            </div>
+                            <div class="address-text">
+                                <h4 class="title"> Email Us</h4>
+                                <p class="address-txt">{{ brand:email }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 mb-65 md-mb-40">
+                        <div class="address-item">
+                            <div class="address-icon">
+                                <img src="assets/images/contact/icons/4.png" alt="Images">
+                            </div>
+                            <div class="address-text">
+                                <h4 class="title"> Call Us</h4>
+                                <p class="address-txt">{{ brand:phone_number }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="callback-form-container" class="contact-section wow fadeInRight" data-wow-duration="1.5s" data-wow-delay="0s">
+                    <div class="sec-title2 mb-40">
+                        <h2 class="title">Request a Call back</h2>
+                    </div>
+                    <div class="contact-wrap">
+                        <form id="contact-form" method="post" action="mailer.php">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 mb-25">
+                                        <input class="from-control" type="text" id="name" name="name" placeholder="Name" required="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 mb-25">
+                                        <input class="from-control" type="text" id="email" name="email" placeholder="E-Mail" required="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 mb-25">
+                                        <input class="from-control" type="text" id="phone" name="phone" placeholder="Phone Number" required="">
+                                    </div>
+                                    <div class="col-lg-12 mb-30">
+                                        <textarea class="from-control" id="message" name="message" placeholder="Your Message Here" required=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <div class="form-group mb-0">
+                                        <button class="readon slide-get " type="submit">Request Callback</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div id="form-messages"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->

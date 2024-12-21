@@ -1,0 +1,294 @@
+
+    <!-- Breadcrumbs Start -->
+    <div class="rs-breadcrumbs img1">
+        <div class="container">
+            <div class="breadcrumbs-inner">
+                <h1 class="page-title">
+                    About Us
+                    <span class="watermark">About</span>
+                </h1>
+                <span class="sub-text">Excepteur sint occaecat cupidatat non proident, sunt in coulpa qui official<br>
+			            modeserunt mollit anim id est laborum 20 years experience.</span>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumbs End -->
+
+    <!-- About Start -->
+    <div id="rs-about" class="rs-about about-style2 pt-120 pb-120 md-pt-80 md-pb-70" style="position: relative">
+        <style>
+            #motionPathSVG {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1; /* Ensure it stays in the background */
+            }
+            #circle {
+                position: absolute;
+                fill: red; /* Color of the circle */
+            }
+            #baby-element{
+                transform: translateX(-100vw);
+            }
+        </style>
+        <svg id="motionPathSVG" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path id="motionPath" d="M-10,90 C40,10 60,150 90,50 S150,90 190,10" fill="none" stroke="black" stroke-width="0"/>
+        </svg>
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/aeroplane.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/dog.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/car.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/gun.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/alphabet.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/toy-car.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/kite.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/rocking-horse.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/crib-toy (1).svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/beach-ball.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/windmill.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/crib-toy.svg" >
+        <img id="baby-element" width="64" height="64" src="/assets/images/about/toy-train.svg" >
+        <div class="container">
+            <div class="row y-middle">
+                <div class="col-lg-6 pr-42 md-pr-15 md-mb-50 anm-scroll-from-left">
+                    <div class="about-img wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0s">
+                        <img src="/assets/images/pragnent-women.svg" alt="Images">
+                    </div>
+                </div>
+                <div class="col-lg-6 pr-38 md-pr-15 pl-30 md-pl-15 anm-scroll-from-right">
+                    <div class="sec-title mb-45 md-mb-25">
+                        <span class="sub-text big-text">About <strong>Eva Maternity Home</strong></span>
+                        <h2 class="title title2 title-color pb-20">
+                            Over 12 Years of Expertise in <span>Maternity Care</span>
+                        </h2>
+                        <p class="desc small2">For over two decades, Eva Maternity Home has been dedicated to providing compassionate and comprehensive care for mothers and their newborns. Our experienced team is here to support you through every step of your pregnancy journey.</p>
+                    </div>
+                    <!-- Counter Section Start -->
+                    <div id="rs-counter" class="rs-counter counter-style2 pb-45">
+                        <div class="row">
+                            <div class="col-lg-5 md-mb-30 col-md-5">
+                                <div class="rs-counter-list">
+                                    <div class="counter-right-border"></div>
+                                    <div class="count-text">
+                                        <div class="count-number">
+                                            <span class="rs-count odometer" data-count="552">00</span>
+                                            <span class="prefix">+</span>
+                                        </div>
+                                        <span class="title">Healthy Deliveries</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-7">
+                                <div class="rs-counter-list widget-padding">
+                                    <div class="count-text">
+                                        <div class="count-number">
+                                            <span class="rs-count odometer" data-count="652">00</span>
+                                            <span class="prefix">+</span>
+                                        </div>
+                                        <span class="title">Happy Families</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Counter Section End -->
+                    <div class="btn-part">
+                        <a class="readon slide-started more" href="contact1.html"><span>Read More</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Call To Action Choose Start -->
+    <div class="rs-cta">
+        <div class="container">
+            <div class="call-action bg1 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s">
+                <div class="sec-title">
+                    <h2 class="title title2 pb-28">
+                        Hear the First Cry?<br>
+                        That's the Sound <br>   of Eva's Newest Arrival
+                    </h2>
+                    <div class="btn-part">
+                        <button id="playPauseBtn" onclick="togglePlayPause()"  class="readon slide-started join">
+                            <span><i id="playPauseIcon" class="fas fa-play"></i></span>
+                        </button>
+                        <audio id="audio" src="/assets/audio/newborncrying.wav"></audio>
+
+                        <script>
+                            function togglePlayPause() {
+                                var audio = document.getElementById("audio");
+                                var icon = document.getElementById("playPauseIcon");
+
+                                if (audio.paused) {
+                                    audio.play();
+                                    icon.classList.remove("fa-play");
+                                    icon.classList.add("fa-pause");
+                                } else {
+                                    audio.pause();
+                                    icon.classList.remove("fa-pause");
+                                    icon.classList.add("fa-play");
+                                }
+                            }
+
+                            // Optional: Update the button icon when the audio ends
+                            var audioElement = document.getElementById("audio");
+                            audioElement.addEventListener('ended', function() {
+                                var icon = document.getElementById("playPauseIcon");
+                                icon.classList.remove("fa-pause");
+                                icon.classList.add("fa-play");
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call To Action Choose End -->
+
+    <!-- Testimonial Section Start -->
+    <div id="rs-testimonial" class="rs-testimonial testimonial-style3 pt-120 md-pt-80">
+        <div class="row no-gutters">
+            <div class="col-lg-6 testi-image"></div>
+            <div class="col-lg-6">
+                <div class="widget-content">
+                    <div class="sec-title mb-40 md-mb-20">
+                        <span class="sub-text big-text">Testimonials</span>
+                        <h2 class="title title2">
+                            What People <span>Says</span>
+                        </h2>
+                    </div>
+                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="1" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1" data-ipad-device-nav="false" data-ipad-device-dots="true" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="true" data-md-device="1" data-md-device-nav="false" data-md-device-dots="true">
+                        <div class="testi-item">
+                            <div class="item-content-basic">
+                                <div class="quote">
+                                    <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                                </div>
+                                <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</p>
+                            </div>
+                            <div class="testi-content">
+                                <div class="testi-information">
+                                    <div class="testi-name">Margot Robbie</div>
+                                    <span class="designation">CEO, Pro Theme</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-item">
+                            <div class="item-content-basic">
+                                <div class="quote">
+                                    <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                                </div>
+                                <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</p>
+                            </div>
+                            <div class="testi-content">
+                                <div class="testi-information">
+                                    <div class="testi-name">Dj Brovo</div>
+                                    <span class="designation">Digital Marketer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-item">
+                            <div class="item-content-basic">
+                                <div class="quote">
+                                    <img src="/assets/images/testimonial/style1/quote2.png" alt="Images">
+                                </div>
+                                <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway.</p>
+                            </div>
+                            <div class="testi-content">
+                                <div class="testi-information">
+                                    <div class="testi-name">Maria Masud</div>
+                                    <span class="designation">Web Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial Section End -->
+
+    <!-- Contact Start -->
+    <div class="rs-contact contact-style1 home4 bg2 pt-120 pb-120 md-pt-80 md-pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 pt-60 pr-50 md-pr-15 md-pt-0 md-mb-50">
+                    <div class="sec-title2 mb-60">
+                        <h2 class="title pb-20">Let’s talk about how we can <span>support</span> your journey.</h2>
+                        <p class="description">At Eva, we’re here to guide you through every step of your pregnancy with care, expertise, and compassion.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 mb-65 md-mb-40">
+                            <div class="address-item">
+                                <div class="address-icon">
+                                    <img src="assets/images/contact/icons/1.png" alt="Images">
+                                </div>
+                                <div class="address-text">
+                                    <h4 class="title"> Eva Maternity Home</h4>
+                                    <p class="address-txt">{{ brand:long_address }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 mb-65 md-mb-40">
+                            <div class="address-item">
+                                <div class="address-icon">
+                                    <img src="assets/images/contact/icons/3.png" alt="Images">
+                                </div>
+                                <div class="address-text">
+                                    <h4 class="title"> Email Us</h4>
+                                    <p class="address-txt">{{ brand:email }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 mb-65 md-mb-40">
+                            <div class="address-item">
+                                <div class="address-icon">
+                                    <img src="assets/images/contact/icons/4.png" alt="Images">
+                                </div>
+                                <div class="address-text">
+                                    <h4 class="title"> Call Us</h4>
+                                    <p class="address-txt">{{ brand:phone_number }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="callback-form-container" class="contact-section wow fadeInRight" data-wow-duration="1.5s" data-wow-delay="0s">
+                        <div class="sec-title2 mb-40">
+                            <h2 class="title">Request a Call back</h2>
+                        </div>
+                        <div class="contact-wrap">
+                            <form id="contact-form" method="post" action="mailer.php">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 mb-25">
+                                            <input class="from-control" type="text" id="name" name="name" placeholder="Name" required="">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 mb-25">
+                                            <input class="from-control" type="text" id="email" name="email" placeholder="E-Mail" required="">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 mb-25">
+                                            <input class="from-control" type="text" id="phone" name="phone" placeholder="Phone Number" required="">
+                                        </div>
+                                        <div class="col-lg-12 mb-30">
+                                            <textarea class="from-control" id="message" name="message" placeholder="Your Message Here" required=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="btn-part">
+                                        <div class="form-group mb-0">
+                                            <button class="readon slide-get " type="submit">Request Callback</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <div id="form-messages"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
