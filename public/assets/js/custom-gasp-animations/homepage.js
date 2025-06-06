@@ -1,253 +1,222 @@
 document.addEventListener("DOMContentLoaded", function() {
     gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
-    const section = document.querySelector("#infent-animation-section");
-    const images = document.querySelectorAll(".appoach-img img");
 
-    // Set initial state for images (hidden and positioned absolutely)
-    gsap.set(images, { opacity: 0, width: '50vh', position: "absolute"});
+    // Use ScrollTrigger.matchMedia() for responsive animations
+    ScrollTrigger.matchMedia({
 
-    // Create a master timeline for all animations
-    let tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: section, // Pin the entire section
-            start: "top 5%", // Start when the top of the section reaches the top of the viewport
-            end: () => `+=${images.length * 400}`, // Adjust the end based on the number of images
-            scrub: true, // Smooth scroll
-            pin: true, // Pin the entire section
-            anticipatePin: 1,
+        // Desktop animations (screens wider than 768px)
+        "(min-width: 768px)": function() {
+            const section = document.querySelector("#infent-animation-section");
+            if (!section) return; // Exit if the section doesn't exist
+            const images = section.querySelectorAll(".appoach-img img");
+
+            // Set initial state for images
+            gsap.set(images, {
+                opacity: 0,
+                width: '50vh', // Keep larger size for desktop
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                xPercent: -50,
+                yPercent: -50
+            });
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 5%",
+                    end: () => `+=${images.length * 400}`, // Longer scroll for desktop
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1,
+                }
+            });
+
+            images.forEach((img, i) => {
+                tl.to(img, {
+                    opacity: 1,
+                    rotation: i * 30, // Full rotation effect
+                    duration: 0.5,
+                }, i * 1);
+                // Hide the previous image more smoothly
+                if (i > 0) {
+                   tl.to(images[i - 1], { opacity: 0, duration: 0.5 }, (i * 1) + 0.5);
+                }
+            });
+
+            tl.to({}, { duration: 1 }); // Final pause
+        },
+
+        // Mobile animations (screens 767px or narrower)
+        "(max-width: 767px)": function() {
+            const section = document.querySelector("#infent-animation-section");
+            if (!section) return; // Exit if section doesn't exist
+            const images = section.querySelectorAll(".appoach-img img");
+
+            // Set initial state for mobile images
+            gsap.set(images, {
+                opacity: 0,
+                width: '80vw', // Use viewport width for better mobile scaling
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                xPercent: -50,
+                yPercent: -50
+            });
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 15%", // Adjust start position for mobile
+                    end: () => `+=${images.length * 250}`, // Shorter scroll duration
+                    scrub: true,
+                    pin: true,
+                    anticipatePin: 1,
+                }
+            });
+
+             images.forEach((img, i) => {
+                tl.to(img, {
+                    opacity: 1,
+                    rotation: i * 15, // Reduce rotation for a subtler effect
+                    duration: 0.5,
+                }, i * 1);
+                if (i > 0) {
+                   tl.to(images[i - 1], { opacity: 0, duration: 0.5 }, (i * 1) + 0.5);
+                }
+            });
+            tl.to({}, { duration: 0.5 }); // Shorter pause
         }
     });
 
-    // Animate each image into view and hide the previous one
-    images.forEach((img, i) => {
-        tl.to(img, {
-            opacity: 1,
-            rotation: i * 30, // Rotate each image 30 degrees more than the previous
-            duration: 0,
-            onStart: () => {
-                if (i > 0) {
-                    gsap.to(images[i - 1], { opacity: 0, duration: 0.5, rotate: 20 });
-                }
-            }
-        }, i * 1); // Space the animations evenly
-    });
 
-    // Optionally, add a pause at the end before releasing the scroll
-    tl.to({}, { duration: 1 });
-    // Function to create a scroll-triggered animation with rotation and scaling
+    // --- Generic Animations (can be left outside matchMedia if they work on all sizes) ---
+    // Note: For complex animations, it's better to also place them inside matchMedia
+    // to adjust values like x, y, start/end triggers per breakpoint.
+
+    // Function to create a scroll-triggered animation
     function createScrollAnimation(target, fromX, toX, rotate = 0, scale = 1) {
-        gsap.fromTo(target,
-            {
-                x: fromX, // Start position outside the window
-                opacity: 0, // Start fully transparent
-                rotate: 0, // Start with rotation
-                scale: scale, // Start with scaling
-            },
-            {
-                x: toX, // End position at its original place
-                opacity: 1, // Fully opaque
-                rotate: 0, // Rotate to normal
-                scale: 1, // Scale to normal
-                ease: 'expo.out(1, 0.5)', // Funky elastic easing
-                scrollTrigger: {
-                    trigger: target, // Element to trigger the animation
-                    start: "top 85%", // Start the animation when the element reaches 85% of the viewport height
-                    end: "top 45%", // End the animation when the element reaches 45% of the viewport height
-                    scrub: true, // Smoothly animate in sync with the scroll position
-                }
+        gsap.fromTo(target, { x: fromX, opacity: 0, rotate: rotate, scale: scale }, {
+            x: toX, opacity: 1, rotate: 0, scale: 1,
+            ease: 'expo.out(1, 0.5)',
+            scrollTrigger: {
+                trigger: target,
+                start: "top 90%", // Start later on the screen
+                end: "top 50%",
+                scrub: true,
             }
-        );
+        });
     }
 
-    // Function to animate section titles and subtitles with funky effects
+    // Animate section titles
     function animateSectionTitles(section, subTextStart, titleStart, descStart) {
+        const trigger = section;
         gsap.fromTo(`${section} .sec-title .sub-text`,
-            { y: 100, opacity: 0, scale: 0.8, rotate: -15 },
-            {
-                y: 0, opacity: 1, scale: 1, rotate: 0,
-                ease: "back.out(1.7)", // Funky easing
-                scrollTrigger: {
-                    trigger: section,
-                    start: subTextStart,
-                    end: "top 40%",
-                    scrub: true,
-                }
-            }
+            { y: 50, opacity: 0 },
+            { y: 0, opacity: 1, ease: "back.out(1.7)", scrollTrigger: { trigger, start: subTextStart || "top 85%", end: "top 60%", scrub: true } }
         );
-
         gsap.fromTo(`${section} .sec-title .title2`,
-            { x: -200, opacity: 0, scale: 0.8, rotate: 15 },
-            {
-                x: 0, opacity: 1, scale: 1, rotate: 0,
-                ease: "back.out(1.7)",
-                scrollTrigger: {
-                    trigger: section,
-                    start: titleStart,
-                    end: "top 35%",
-                    scrub: true,
-                }
-            }
+            { x: -100, opacity: 0 },
+            { x: 0, opacity: 1, ease: "back.out(1.7)", scrollTrigger: { trigger, start: titleStart || "top 80%", end: "top 55%", scrub: true } }
         );
-
         if (descStart) {
             gsap.fromTo(`${section} .sec-title .desc`,
-                { x: 200, opacity: 0, scale: 0.8, rotate: -15 },
-                {
-                    x: 0, opacity: 1, scale: 1, rotate: 0,
-                    ease: "back.out(1.7)",
-                    scrollTrigger: {
-                        trigger: section,
-                        start: descStart,
-                        end: "top 35%",
-                        scrub: true,
-                    }
-                }
+                { x: 100, opacity: 0 },
+                { x: 0, opacity: 1, ease: "back.out(1.7)", scrollTrigger: { trigger, start: descStart || "top 80%", end: "top 55%", scrub: true } }
             );
         }
     }
 
-    // Function to animate section items with motion path
+    // Simplified item animation for better performance
     function animateSectionItems(selector, trigger, start, end) {
-        gsap.utils.toArray(selector).forEach((item, i) => {
-            gsap.fromTo(item,
-                {
-                    opacity: 0,
-                    motionPath: {
-                        path: [{x: -100, y: 50}, {x: 0, y: 0}],
-                        curviness: 1.25,
-                        autoRotate: true
-                    },
-                    scale: 0.8,
-                },
-                {
-                    opacity: 1,
-                    motionPath: {
-                        path: [{x: 0, y: 0}],
-                        curviness: 1.25,
-                        autoRotate: true
-                    },
-                    scale: 1,
-                    ease: "elastic.out(1, 0.5)",
-                    scrollTrigger: {
-                        trigger: trigger || item,
-                        start: start,
-                        end: end || "top 50%",
-                        scrub: true,
-                    }
+        gsap.utils.toArray(selector).forEach(item => {
+            gsap.from(item, {
+                opacity: 0,
+                y: 50, // Simpler upward movement instead of motion path
+                scale: 0.9,
+                ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: trigger || item,
+                    start: start || "top 90%",
+                    end: end || "top 60%",
+                    scrub: true,
                 }
-            );
+            });
         });
     }
-    // Function to create a looping border-radius animation
+
     function animateBannerBoxRadius(selector) {
         gsap.to(selector, {
-            borderRadius: "20% 30% 20% 30%", // Start with uniform initial values
-            duration: 10, // Long duration for smooth, gradual changes
-            ease: "none", // Linear easing for seamless looping
-            repeat: -1, // Infinite loop
-            keyframes: {
-                "0%":   { borderRadius: "20% 30% 20% 30%" }, // Initial state
-                "25%":  { borderRadius: "30% 20% 30% 20%" }, // Intermediate state
-                "50%":  { borderRadius: "20% 30% 20% 30%" }, // Back to initial state but flipped
-                "75%":  { borderRadius: "30% 20% 30% 20%" }, // Another intermediate state
-                "100%": { borderRadius: "20% 30% 20% 30%" }  // Final state, matches the initial state
-            }
+            borderRadius: "20% 30% 20% 30%",
+            duration: 10,
+            ease: "none",
+            repeat: -1,
+            yoyo: true, // yoyo simplifies the keyframes
+            keyframes: [
+                { borderRadius: "20% 30% 20% 30%" },
+                { borderRadius: "30% 20% 30% 20%" },
+                { borderRadius: "20% 30% 20% 30%" }
+            ]
         });
     }
-    // Initialize the border-radius animation for the banner-box
+
+    // --- Initialize all animations ---
+
     animateBannerBoxRadius("#homepage-hero-banner-box");
-    // Create scroll animations for sliding elements with rotation and scaling
-    createScrollAnimation(".anm-scroll-from-right", '100%', '0%', 45, 0.5); // Right to center with rotation and scaling
-    createScrollAnimation(".anm-scroll-from-left", '-100%', '0%', -45, 0.5); // Left to center with rotation and scaling
+    createScrollAnimation(".anm-scroll-from-right", '100%', '0%', 25, 0.8);
+    createScrollAnimation(".anm-scroll-from-left", '-100%', '0%', -25, 0.8);
 
-    // Animate "Our Services" section
-    animateSectionTitles(".rs-services", "top 80%", "top 75%", "top 75%");
-    animateSectionItems(".rs-services-slider", null, "top 90%");
+    animateSectionTitles(".rs-services");
+    animateSectionItems(".rs-services-slider");
 
-    // Animate "Our Approach" section with motion paths
-    animateSectionTitles(".rs-about", "top 80%", "top 75%", "top 75%");
-    animateSectionItems(".rs-about .check-lists li", ".rs-about .check-lists", "top 80%");
-    animateSectionItems(".rs-about .services-wrap", ".rs-about .services-wrap", "top 75%", "top 35%");
-    animateSectionItems(".rs-about .btn-part", ".rs-about .btn-part", "top 75%", "top 35%");
+    animateSectionTitles(".rs-about");
+    animateSectionItems(".rs-about .check-lists li", ".rs-about .check-lists");
+    animateSectionItems(".rs-about .services-wrap, .rs-about .btn-part", ".rs-about .services-wrap");
 
-    // Animate "Case Studies" section with funky motion paths
-    animateSectionTitles(".rs-project", "top 80%", "top 75%");
-    animateSectionItems(".project-item", null, "top 90%");
+    animateSectionTitles(".rs-project");
+    animateSectionItems(".project-item");
 
-    // Animate "Our Clients" section with scaling logos
-    animateSectionTitles(".rs-team", "top 80%", "top 75%");
-    animateSectionItems(".team-item", null, "top 85%", "top 45%");
+    animateSectionTitles(".rs-team");
+    animateSectionItems(".team-item");
 
-    // Animate "Careers" section with funky rotations and scaling
-    animateSectionTitles(".rs-cta", "top 80%", "top 75%");
-    animateSectionItems(".rs-cta .btn-part", ".rs-cta", "top 75%", "top 35%");
+    animateSectionTitles(".rs-cta");
+    animateSectionItems(".rs-cta .btn-part", ".rs-cta");
 
-    // Animate "Testimonials" section with a creative approach
-    animateSectionTitles("#rs-testimonial", "top 80%", "top 75%");
-    // You can add specific animations for testimonial items using a similar approach
-
-    // Animate "News & Blog" section with motion paths
-    animateSectionTitles("#rs-blog", "top 80%", "top 75%");
-    animateSectionItems("#rs-blog .blog-item, #rs-blog .blog-horizontal .blog-item-wrap", null, "top 90%");
+    animateSectionTitles("#rs-testimonial");
+    animateSectionTitles("#rs-blog");
+    animateSectionItems("#rs-blog .blog-item, #rs-blog .blog-horizontal .blog-item-wrap");
 
     gsap.to('.background-layered-image.image2', {
-        y: '-20px',   // Move the sun up by 20px
+        y: '-20px',
         x: '20px',
-        duration: 3,  // Duration of the animation (in seconds)
-        ease: 'power1.inOut', // Easing function
-        yoyo: true,  // Make the animation reverse direction
-        repeat: -1   // Repeat the animation infinitely
-    });
-    // Set the initial position off-screen (below the bottom)
-    gsap.set('#hero-women', {
-        y: '100%',  // 100% means the element starts completely off-screen
-        opacity: 0  // Start with opacity at 0 for a fade-in effect
+        duration: 3,
+        ease: 'power1.inOut',
+        yoyo: true,
+        repeat: -1
     });
 
-    // Animate the element into position
-    gsap.to('#hero-women', {
-        y: '0%',   // Bring the element back to its original position
-        opacity: 1, // Fade in
-        duration: 3,  // Duration of the animation (in seconds)
-        ease: 'power3.out',  // Easing function for a smooth effect
-    });
-    gsap.to("#baby-element", {
-        opacity:1,
-        motionPath: {
-            path: "#motionPath",
-            align: "#motionPath",
-            autoRotate: true,
-            alignOrigin: [0.5, 0.5]
-        },
-        scrollTrigger: {
-            trigger: "#rs-about",
-            start: "top 20%", // Start the animation when the element reaches 85% of the viewport height
-            end: "top -80%", // End the animation when the element reaches 45% of the viewport height
-            scrub: true
-        },
-        stagger: {
-            each: 0.01, // Adjust this value for more or less spacing between elements
-            from: "start" // Animates each element in order (start, end, center, etc.)
-        }
-    });
-    // Create a GSAP timeline for the wiggle effect
+    gsap.fromTo('#hero-women', { y: '50%', opacity: 0 }, { y: '0%', opacity: 1, duration: 2, ease: 'power3.out' });
+
+    // Baby element on motion path - ensure the path is scalable (e.g., SVG)
+    if (document.querySelector("#motionPath")) {
+         gsap.to("#baby-element", {
+            opacity: 1,
+            motionPath: {
+                path: "#motionPath",
+                align: "#motionPath",
+                autoRotate: true,
+                alignOrigin: [0.5, 0.5]
+            },
+            scrollTrigger: {
+                trigger: "#rs-about",
+                start: "top 20%",
+                end: "top -80%",
+                scrub: true
+            },
+        });
+    }
+
     const wiggleTimeline = gsap.timeline({ repeat: -1, yoyo: true, ease: "power1.inOut" });
-
-    wiggleTimeline.to(".about-img", {
-        rotation: 3, // Rotate slightly to the right
-        x: 2, // Move slightly to the right
-        duration: 2, // Duration of this part of the wiggle
-    }).to(".about-img", {
-        rotation: -3, // Rotate slightly to the left
-        x: -2, // Move slightly to the left
-        duration: 2, // Duration of this part of the wiggle
-    }).to(".about-img", {
-        rotation: 2, // Rotate back to the right
-        x: 1, // Move slightly to the right
-        duration: 2, // Duration of this part of the wiggle
-    }).to(".about-img", {
-        rotation: 0, // Return to the initial rotation
-        x: 0, // Return to the initial position
-        duration: 2, // Duration to return to the initial state
-    });
+    wiggleTimeline.to(".about-img", { rotation: 2, x: 2, duration: 2 })
+                  .to(".about-img", { rotation: -2, x: -2, duration: 2 });
 });
